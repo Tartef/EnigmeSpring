@@ -7,7 +7,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 class EnigmeSpring2ApplicationTests {
 
     @Test
-    void contextLoads() {
+    public String home(){
+        return "Hello World!";
     }
 
 }
