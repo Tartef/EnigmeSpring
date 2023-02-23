@@ -20,11 +20,11 @@
   </nav>
 </header>
 
-<form class="enigmeDiv" action="#" th:action="@{/result}" th:object="${greeting}" method="post">
+<form class="enigmeDiv" action="#" th:action="@{/result}" th:object="${greeting}" method="post" onsubmit="return validation()">
   <h1 class="titreEnigme">Enigme cool</h1>
   <p></p>
   <p>Réponse: <input type="text" th:field="*{content}" /></p>
-  <p><input type="submit" value="Submit" /></p>
+  <p><input type="submit" value="Valider"  onclick="validation()" /></p>
 </form>
 <div class="figure">
   <img class="imageAssistante" src="images/assistante2.svg" alt="assistante" height="300px">
@@ -42,6 +42,19 @@
   document.getElementById('assistanteIdee').addEventListener('click', function(){
     indiceF12();
   });
+
+  function validation(){
+    var reponse = document.getElementById('content').value;
+
+    if(reponse== 'test'){
+      return true;
+    }
+    else{
+      window.location.href ="/"
+      alert('Dommage, essaye à nouveau!');
+        return false;
+    }
+  }
 </script>
 
 </html>
