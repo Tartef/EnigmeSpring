@@ -5,6 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>Enigme Dev Web</title>
   <link rel="stylesheet" href="/style.css">
+  <link rel="script" href="/script.js">
 </head>
 <body>
 <header class="header">
@@ -18,10 +19,11 @@
 
   </nav>
 </header>
-<h1>Result</h1>
-<p th:text="'id: ' + ${greeting.id}" />
+<div class="enigmeDiv">
+<h1 >Result</h1>
 <p th:text="'content: ' + ${greeting.content}" />
 <a href="/">Submit another message</a>
+</div>
 <div class="figure">
   <img class="imageAssistante" src="images/assistante2.svg" alt="assistante" height="300px">
   <img id="assistanteIdee" class="imageAssistanteIdee" src="images/assistanteIdee.svg" alt="assistante" height="300px">
