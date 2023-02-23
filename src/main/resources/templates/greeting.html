@@ -24,7 +24,8 @@
   <h1 class="titreEnigme">Enigme cool</h1>
   <p></p>
   <p>Réponse: <input type="text" th:field="*{content}" /></p>
-  <p><input type="submit" value="Valider"  onclick="validation()" /></p>
+  <p id="errorMessage"></p>
+  <button type="submit">Envoyer</button>
 </form>
 <div class="figure">
   <img class="imageAssistante" src="images/assistante2.svg" alt="assistante" height="300px">
@@ -44,15 +45,16 @@
   });
 
   function validation(){
-    var reponse = document.getElementById('content').value;
 
-    if(reponse== 'test'){
+    var reponse = document.getElementById('content').value;
+    var errorMessage = document.getElementById('errorMessage');
+
+    if(reponse === 'test'){
       return true;
     }
     else{
-      window.location.href ="/"
-      alert('Dommage, essaye à nouveau!');
-        return false;
+      errorMessage.innerText = "Réponse incorrecte, réessayez !";
+      return false;
     }
   }
 </script>
