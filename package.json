@@ -1,0 +1,23 @@
+{
+  "name": "enigmespring",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "npm run test",
+    "build": "sass src/main/resources/static/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tartef/enigmeSpring.git"
+  },
+  "author": "erwab",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tartef/enigmeSpring/issues"
+  },
+  "homepage": "https://github.com/Tartef/enigmeSpring#readme",
+  "dependencies": {
+    "scss": "^0.2.4"
+  }
+}
