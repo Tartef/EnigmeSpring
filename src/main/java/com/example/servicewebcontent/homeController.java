@@ -20,6 +20,12 @@ public class homeController {
         return "result";
     }
 
+    @GetMapping("/home")
+    public String home(Model model) {
+        model.addAttribute("home", new home());
+        return "index";
+    }
+
 
 
 }
