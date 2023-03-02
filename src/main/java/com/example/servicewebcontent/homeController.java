@@ -10,13 +10,13 @@ public class homeController {
 
     @GetMapping("/")
     public String greetingForm(Model model) {
-        model.addAttribute("greeting", new home());
-        return "greeting";
+        model.addAttribute("enigme", new home());
+        return "enigme";
     }
 
     @PostMapping("/result")
-    public String greetingSubmit(@ModelAttribute home greeting, Model model) {
-        model.addAttribute("greeting", greeting);
+    public String greetingSubmit(@ModelAttribute home enigme, Model model) {
+        model.addAttribute("enigme", enigme);
         return "result";
     }
 
