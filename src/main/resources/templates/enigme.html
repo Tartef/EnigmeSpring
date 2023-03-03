@@ -20,15 +20,219 @@
   </nav>
 </header>
 
+<div class="boite">
+<div class="enigmeDiv" id="enigmeDiv">
+  <h1 class="titreEnigme">cc</h1>
+  <div id="divid" style="position:relative"><img src="/images/codesmell.PNG" class="image" alt="code smell" th:src="@{images/codesmell.PNG}" usemap="#smell"></div>
 
-<div class="enigmeDiv">
-  <h1 class="titreEnigme">zzcc</h1>
-  <div id="divid" style="width:250px; height:100px; background-color:#0809fe;"></div>
+  <map name="smell">
+    <area id="lineToPrint" shape="rect" coords="150,96,261,115" alt="lineToPrint">
+    <area id="lineToPrint2" shape="rect" coords="262 , 116, 385 , 137" alt="lineToPrint">
+    <area id="casseClass" shape="rect" coords="132 , 6, 228 , 26" alt="casseClass">
+    <area id="casseMethod" shape="rect" coords="162 , 76, 235 , 93" alt="casseMethod">
+    <area id="number" shape="rect" coords="767 , 95, 782 , 113" alt="number">
+  </map>
+
+
+
   <br/><br/> Click to add the coordinates in this text field.<br/>
   <input type="text" name="regcoords" id="regcoords" />
   <div id="coords">Coords</div>
 </div>
+</div>
 <script type="text/javascript">
+
+var lineToPrint = document.getElementById('lineToPrint');
+var lineToPrint2 = document.getElementById('lineToPrint2');
+var magicNumber = document.getElementById('number');
+var casseClass = document.getElementById('casseClass');
+var casseMethod = document.getElementById('casseMethod');
+var score = 0;
+
+var divid = document.getElementById('divid');
+
+lineToPrint.onclick = function(e) {
+  // Obtenir les coordonnées de l'area cliquée
+  lineToPrint.onclick = null;
+  var coords = this.getAttribute('coords').split(',');
+  var x1 = parseInt(coords[0]);
+  var y1 = parseInt(coords[1]);
+  var x2 = parseInt(coords[2]);
+  var y2 = parseInt(coords[3]);
+  var width = x2 - x1;
+  var height = y2 - y1;
+
+  // Créer le canvas et le placer sur l'image
+  var canvas = document.createElement('canvas');
+  canvas.width = width;
+  canvas.height = height;
+  canvas.style.position = 'absolute';
+  canvas.style.left = x1 + 'px';
+  canvas.style.top = y1 + 'px';
+  divid.appendChild(canvas);
+
+  // Tracer le rectangle sur le canvas
+  var ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'rgba(255, 0, 0,0.5)';
+  ctx.fillRect(0, 0, width, height);
+  score++;
+  if (score === 5) {
+    alert('Vous avez trouvé toutes les zones !');
+  }
+};
+
+lineToPrint2.onclick = function(e) {
+  lineToPrint2.onclick = null;
+  // Obtenir les coordonnées de l'area cliquée
+  var coords = this.getAttribute('coords').split(',');
+  var x1 = parseInt(coords[0]);
+  var y1 = parseInt(coords[1]);
+  var x2 = parseInt(coords[2]);
+  var y2 = parseInt(coords[3]);
+  var width = x2 - x1;
+  var height = y2 - y1;
+
+  // Créer le canvas et le placer sur l'image
+  var canvas = document.createElement('canvas');
+  canvas.width = width;
+  canvas.height = height;
+  canvas.style.position = 'absolute';
+  canvas.style.left = x1 + 'px';
+  canvas.style.top = y1 + 'px';
+  divid.appendChild(canvas);
+
+  // Tracer le rectangle sur le canvas
+  var ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'rgba(255, 0, 0,0.5)';
+  ctx.fillRect(0, 0, width, height);
+  score++;
+  if (score === 5) {
+    alert('Vous avez trouvé toutes les zones !');
+  }
+};
+
+magicNumber.onclick = function(e) {
+    magicNumber.onclick = null;
+  // Obtenir les coordonnées de l'area cliquée
+  var coords = this.getAttribute('coords').split(',');
+  var x1 = parseInt(coords[0]);
+  var y1 = parseInt(coords[1]);
+  var x2 = parseInt(coords[2]);
+  var y2 = parseInt(coords[3]);
+  var width = x2 - x1;
+  var height = y2 - y1;
+
+  // Créer le canvas et le placer sur l'image
+  var canvas = document.createElement('canvas');
+  canvas.width = width;
+  canvas.height = height;
+  canvas.style.position = 'absolute';
+  canvas.style.left = x1 + 'px';
+  canvas.style.top = y1 + 'px';
+  divid.appendChild(canvas);
+
+  // Tracer le rectangle sur le canvas
+  var ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'rgba(255, 0, 0,0.5)';
+  ctx.fillRect(0, 0, width, height);
+  score++;
+  if (score === 5) {
+    alert('Vous avez trouvé toutes les zones !');
+  }
+};
+
+casseClass.onclick = function(e) {
+  casseClass.onclick = null;
+  // Obtenir les coordonnées de l'area cliquée
+  var coords = this.getAttribute('coords').split(',');
+  var x1 = parseInt(coords[0]);
+  var y1 = parseInt(coords[1]);
+  var x2 = parseInt(coords[2]);
+  var y2 = parseInt(coords[3]);
+  var width = x2 - x1;
+  var height = y2 - y1;
+
+  // Créer le canvas et le placer sur l'image
+  var canvas = document.createElement('canvas');
+  canvas.width = width;
+  canvas.height = height;
+  canvas.style.position = 'absolute';
+  canvas.style.left = x1 + 'px';
+  canvas.style.top = y1 + 'px';
+  divid.appendChild(canvas);
+
+  // Tracer le rectangle sur le canvas
+  var ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'rgba(255, 0, 0,0.5)';
+  ctx.fillRect(0, 0, width, height);
+    score++;
+  if (score === 5) {
+    window.location.href = ""
+  }
+};
+
+casseMethod.onclick = function(e) {
+    casseMethod.onclick = null;
+  // Obtenir les coordonnées de l'area cliquée
+  var coords = this.getAttribute('coords').split(',');
+  var x1 = parseInt(coords[0]);
+  var y1 = parseInt(coords[1]);
+  var x2 = parseInt(coords[2]);
+  var y2 = parseInt(coords[3]);
+  var width = x2 - x1;
+  var height = y2 - y1;
+
+  // Créer le canvas et le placer sur l'image
+  var canvas = document.createElement('canvas');
+  canvas.width = width;
+  canvas.height = height;
+  canvas.style.position = 'absolute';
+  canvas.style.left = x1 + 'px';
+  canvas.style.top = y1 + 'px';
+  divid.appendChild(canvas);
+
+  // Tracer le rectangle sur le canvas
+  var ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'rgba(255, 0, 0,0.5)';
+  ctx.fillRect(0, 0, width, height);
+  score++;
+  if (score === 5) {
+    alert('Vous avez trouvé toutes les zones !');
+  }
+};
+
+window.addEventListener('resize', function() {
+  // Recalculer les coordonnées de l'area cliquée
+  var coords = document.getElementById('lineToPrint').getAttribute('coords').split(',');
+  var x1 = parseInt(coords[0]);
+  var y1 = parseInt(coords[1]);
+  var x2 = parseInt(coords[2]);
+  var y2 = parseInt(coords[3]);
+
+  // Calculer les nouvelles dimensions et positions du canvas
+  var width = x2 - x1;
+  var height = y2 - y1;
+  var canvas = document.getElementById('canvas');
+  var rect = canvas.getBoundingClientRect();
+  var scaleX = canvas.width / rect.width;
+  var scaleY = canvas.height / rect.height;
+  var newLeft = x1 - rect.left;
+  var newTop = y1 - rect.top;
+  var newWidth = width / scaleX;
+  var newHeight = height / scaleY;
+
+  // Mettre à jour les styles du canvas
+  canvas.style.left = newLeft + 'px';
+  canvas.style.top = newTop + 'px';
+  canvas.width = newWidth;
+  canvas.height = newHeight;
+
+  // Redessiner le rectangle sur le canvas
+  var ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'rgba(255, 0, 0,0.5)';
+  ctx.fillRect(0, 0, newWidth, newHeight);
+});
+
   /*
    Here add the ID of the HTML elements for which to show the mouse coords
    Within quotes, separated by comma.
